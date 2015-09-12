@@ -44,11 +44,15 @@ public class MgrDatabaseAdapter extends BaseAdapter {
         }
         
         ((TextView)convertView).setText(names.get(position));
-        convertView.setPadding(10,10,10,10);
+        convertView.setPadding(20,20,20,20);
         return convertView;
     }
 
     public void addItem(String name) {
         names.add(name);
+    }
+
+    public void removeItem(String name) {
+        names.remove(name);
     }
 }

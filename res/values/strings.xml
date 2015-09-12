@@ -2,6 +2,11 @@
 <resources>
     <string name="app_name">mgrAndroid</string>
     <string name="MAIN_TITLE">Android</string>
+    <string name="YES">Yes</string>
+    <string name="NO">No</string>
+    <string name="OK">Ok</string>
+    <string name="SEND_MAIL">Send mail...</string>
+
 
     <string name="ROTATION">Activity lifecycle</string>
     <string name="ROTATION_CREATE">Created</string>
@@ -42,16 +47,23 @@
 
     <string name="DB">Database managing</string>
     <string name="DB_CREATION">Database creating</string>
-    <string name="DB_REMOVE">Remove this database</string>
+    <string name="DB_REMOVE">Remove database</string>
+    <string name="DB_REMOVE_QUESTION">Do you want to remove this database?</string>
     <string name="DB_CREATE">Create database</string>
     <string name="DB_CREATED">Created</string>
     <string name="DB_SEND">Send this database by mail</string>
     <string name="DB_SENDING">Send database</string>
     <string name="DB_NAME">Database name</string>
     <string name="DB_NAME_EMPTY">Database name can not be empty</string>
+    <string name="DB_SQL_EMPTY">Query can not be empty</string>
     <string name="DB_QUERY">Database query</string>
     <string name="DB_QUERY_HINT">Query to execute on database</string>
     <string name="DB_EXECUTE">Execute query</string>
+    <string name="DB_REMOVED">Database %1s removed</string>
+    <string name="DB_NO_SELECTED">Database not selected</string>
+    <string name="DB_SQL_DONE">Done</string>
+    <string name="DB_SQL_ERROR">Error: %1s</string>
+    <string name="DB_MAIL_TITLE">Database %1s</string>
 
 
 </resources>
