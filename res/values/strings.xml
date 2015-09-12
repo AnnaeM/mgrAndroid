@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">mgrAndroid</string>
+    <string name="MAIN_TITLE">Android</string>
+
+    <string name="ROTATION">Activity lifecycle</string>
+    <string name="ROTATION_CREATE">Created</string>
+    <string name="ROTATION_RECREATE">Rebuild after rotation</string>
+    <string name="ROTATION_RECREATE_REBUILD">Restore data</string>
+    <string name="ROTATION_RECREATE_DATA_LOST">Data lost</string>
+    <string name="ROTATION_ON_CREATE_VIEW">View creating</string>
+    <string name="ROTATION_ON_RESUME">Resuming</string>
+    <string name="ROTATION_ON_RESTART">Restarting</string>
+    <string name="ROTATION_ON_START">Starting</string>
+    <string name="ROTATION_ON_PAUSE">Pausing</string>
+    <string name="ROTATION_ON_CONFIGURATION_CHANGE">Configuration changed</string>
+    <string name="ROTATION_ON_SAVE_INSTANCE">Saving instance</string>
+    <string name="ROTATION_ON_RESTORE_INSTANCE">Restoring instance</string>
+    <string name="ROTATION_ON_STOP">Stopped</string>
+    <string name="ROTATION_ON_DESTROY">Activity destroyed</string>
+    <string name="ROTATION_CLEAR_LOGS">Clear logs</string>
+    <string name="ROTATION_RESTORE_DATA">Restore data</string>
+    <string name="ROTATION_TEST_CHECKBOX">Test checkbox</string>
+
+    <string name="GPS">Test gps</string>
+    <string name="GPS_TURN_ON">Turn on gps</string>
+
+    <string name="PHONE">Phone</string>
+    <string name="PHONE_NUMBER">Phone number</string>
+    <string name="PHONE_CALL_NOW">Call now</string>
+    <string name="PHONE_USE_INTENT">Use other intent</string>
+    <string name="PHONE_EMPTY_NUMBER">Phone number can not be empty</string>
+    <string name="PHONE_CHOOSE_INTENT">Choose intent</string>
+
+
+    <string name="SMS">Send sms</string>
+    <string name="SEND_SMS">Send now</string>
+    <string name="SMS_USE_INTENT">Use other intent</string>
+    <string name="SMS_EMPTY_MESSAGE">Message can not be empty</string>
+    <string name="SMS_MESSAGE">Message</string>
+    <string name="SMS_SENDED">Sended!</string>
+
+    <string name="DB">Database managing</string>
+    <string name="DB_CREATION">Database creating</string>
+    <string name="DB_REMOVE">Remove this database</string>
+    <string name="DB_CREATE">Create database</string>
+    <string name="DB_CREATED">Created</string>
+    <string name="DB_SEND">Send this database by mail</string>
+    <string name="DB_SENDING">Send database</string>
+    <string name="DB_NAME">Database name</string>
+    <string name="DB_NAME_EMPTY">Database name can not be empty</string>
+    <string name="DB_QUERY">Database query</string>
+    <string name="DB_QUERY_HINT">Query to execute on database</string>
+    <string name="DB_EXECUTE">Execute query</string>
+
+
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+        <RelativeLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:padding="10dp"
+                      >
+
+            <Button android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:id="@+id/clear_logs"
+                    android:text="@string/ROTATION_CLEAR_LOGS"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:minWidth="150dp"
+                      android:id="@+id/activity_message"
+                      android:padding="10dp"
+                      android:layout_gravity="center_horizontal"
+                      android:background="@color/info_text_background"
+                      android:layout_below="@id/clear_logs"
+                    android:layout_alignParentLeft="true"/>
+
+            <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ROTATION_RESTORE_DATA"
+                    android:id="@+id/save_instance"
+                    android:layout_toRightOf="@id/activity_message"
+                    android:layout_below="@id/clear_logs"/>
+
+            <!--<CheckBox-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/ROTATION_TEST_CHECKBOX"-->
+                    <!--android:id="@+id/test_checkbox"-->
+                    <!--android:layout_toRightOf="@id/activity_message"-->
+                    <!--android:layout_below="@id/save_instance"/>-->
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

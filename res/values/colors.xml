@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="action_bar_background">#8bae65</color>
+    <color name="info_text_background">#e3e3e3</color>
+    <color name="separator">@color/action_bar_background</color>
+    <color name="error_color">@color/action_bar_background</color>
+
+</resources>
