@@ -108,7 +108,7 @@ public class MgrDatabaseActivity extends Activity {
             if(isValid(userQuery, validationError, R.string.DB_SQL_EMPTY)) {
                 String s = databaseHelper.executeQuery(name, userQuery);
                 if(s == null) {
-                    makeToast(s);
+                    makeToast(getResources().getString(R.string.DB_SQL_DONE));
                 } else {
                     new AlertDialog.Builder(this)
                             .setTitle(R.string.DB_EXECUTE)

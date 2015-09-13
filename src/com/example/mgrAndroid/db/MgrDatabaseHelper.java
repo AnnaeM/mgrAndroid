@@ -59,7 +59,7 @@ public class MgrDatabaseHelper {
 
     public String executeQuery(String name, String query) {
         SQLiteDatabase sqLiteDatabase = getDatabase(name);
-        if (query.contains("SELECT")) {
+        if (query.toUpperCase().contains("SELECT")) {
             return executeSelect(sqLiteDatabase, query);
         } else {
             return executeOther(sqLiteDatabase, query);
@@ -109,5 +109,5 @@ public class MgrDatabaseHelper {
         String path = databases.get(name).getPath();
         return new File(path);
     }
-    
+
 }
