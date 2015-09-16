@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.mgrAndroid.R;
 
+import java.io.File;
 import java.util.List;
 
 public class MgrDatabaseActivity extends Activity {
@@ -130,8 +131,10 @@ public class MgrDatabaseActivity extends Activity {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("application/octet-stream");
             intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.DB_MAIL_TITLE, name));
+            //can not attach file from private storage, copy database to public dir
+            File databaseCopy = databaseHelper.exportDatabse(name);
             // the attachment
-            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(databaseHelper.getDatabaseFile(name)));
+            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(databaseCopy));
             startActivity(Intent.createChooser(intent, getResources().getString(R.string.SEND_MAIL)));
         }
     }
@@ -171,4 +174,10 @@ public class MgrDatabaseActivity extends Activity {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    protected void onDestroy() {
+        //remove databases copies
+        databaseHelper.deleteDatabaseCopies();
+        super.onDestroy();
+    }
 }

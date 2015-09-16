@@ -4,9 +4,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.os.Environment;
 import com.example.mgrAndroid.R;
 
-import java.io.File;
+import java.io.*;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,9 +21,11 @@ public class MgrDatabaseHelper {
 
     private Context context;
     private Map<String, SQLiteDatabase> databases;
+    private List<File> dbCopies;
 
     public MgrDatabaseHelper(Context context) {
         this.context = context;
+        dbCopies = new ArrayList<>();
     }
 
     public List<String> loadDatabases() {
@@ -110,4 +114,37 @@ public class MgrDatabaseHelper {
         return new File(path);
     }
 
+    public File exportDatabse(String databaseName) {
+        try {
+            File sd = Environment.getExternalStorageDirectory();
+            File data = Environment.getDataDirectory();
+            if (sd.canWrite()) {
+                String currentDBPath = "//data//"+context.getPackageName()+"//databases//"+databaseName+"";
+                String backupDBPath = databaseName+".db";
+                File currentDB = new File(data, currentDBPath);
+                File backupDB = new File(sd, backupDBPath);
+
+                if (currentDB.exists()) {
+                    FileChannel src = new FileInputStream(currentDB).getChannel();
+                    FileChannel dst = new FileOutputStream(backupDB).getChannel();
+                    dst.transferFrom(src, 0, src.size());
+                    src.close();
+                    dst.close();
+                }
+                //add to list to delete on activity destroy
+                dbCopies.add(backupDB);
+                return backupDB;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void deleteDatabaseCopies() {
+        for(File copy : dbCopies) {
+            copy.delete();
+        }
+    }
 }

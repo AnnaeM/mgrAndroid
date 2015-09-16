@@ -6,9 +6,10 @@
 .idea/
 /out/
 /.idea/
+*.apk
 /gen/
 local.properties
-build.xml
 ant.properties
 project.properties
+proguard_logs/
 
