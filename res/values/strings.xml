@@ -29,6 +29,7 @@
 
     <string name="GPS">Test gps</string>
     <string name="GPS_TURN_ON">Turn on gps</string>
+    <string name="GPS_WAIT">Wait...</string>
 
     <string name="PHONE">Phone</string>
     <string name="PHONE_NUMBER">Phone number</string>

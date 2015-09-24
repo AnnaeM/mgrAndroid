@@ -35,7 +35,7 @@ public class MgrPhoneActivity extends Activity {
         findViewById(R.id.phone_use_intent).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUseIntent();
+                onUseOtherIntent();
             }
         });
 
@@ -65,7 +65,7 @@ public class MgrPhoneActivity extends Activity {
         }
     }
 
-    private void onUseIntent() {
+    private void onUseOtherIntent() {
         String phoneNumber = getPhoneNumber();
         if(isValid(phoneNumber)) {
             // <uses-permission android:name="android.permission.CALL_PHONE" />
