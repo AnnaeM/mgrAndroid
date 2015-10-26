@@ -36,15 +36,6 @@
                     android:id="@+id/save_instance"
                     android:layout_toRightOf="@id/activity_message"
                     android:layout_below="@id/clear_logs"/>
-
-            <!--<CheckBox-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/ROTATION_TEST_CHECKBOX"-->
-                    <!--android:id="@+id/test_checkbox"-->
-                    <!--android:layout_toRightOf="@id/activity_message"-->
-                    <!--android:layout_below="@id/save_instance"/>-->
-
         </RelativeLayout>
     </ScrollView>
 

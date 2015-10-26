@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by Ania on 2015-09-12.
+ * Adapter for spinner
  */
 public class MgrDatabaseAdapter extends BaseAdapter {
 

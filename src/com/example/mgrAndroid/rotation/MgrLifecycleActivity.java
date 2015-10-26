@@ -17,7 +17,7 @@ import java.util.TimerTask;
 /**
  * Created by Anna on 15.08.2015.
  */
-public class MgrRotationActivity extends Activity
+public class MgrLifecycleActivity extends Activity
 {
     private static final String MESSAGE = "MESSAGE";
     private static final String RESTORE_STATE = "RESTORE_STATE";
@@ -45,8 +45,6 @@ public class MgrRotationActivity extends Activity
             {
                 messageBuilder = new StringBuilder(message);
                 addMessage(R.string.ROTATION_RECREATE_REBUILD);
-//                CheckBox testCheckbox = (CheckBox) findViewById(R.id.test_checkbox);
-//                testCheckbox.setChecked(savedInstanceState.getBoolean(TEST_CHECKBOX_STATE));
             }
             else
             {
@@ -110,9 +108,7 @@ public class MgrRotationActivity extends Activity
         super.onSaveInstanceState(outState);
         outState.putString(MESSAGE, messageBuilder.toString());
         CheckBox saveInstance = (CheckBox) findViewById(R.id.save_instance);
-//        CheckBox testCheckbox = (CheckBox) findViewById(R.id.test_checkbox);
         outState.putBoolean(RESTORE_STATE, saveInstance.isChecked());
-//        outState.putBoolean(TEST_CHECKBOX_STATE, testCheckbox.isChecked());
     }
 
     @Override

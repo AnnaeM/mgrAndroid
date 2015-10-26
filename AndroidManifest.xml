@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".rotation.MgrRotationActivity"/>
+        <activity android:name=".rotation.MgrLifecycleActivity"/>
         <activity android:name=".intents.MgrGpsActivity"/>
         <activity android:name=".intents.MgrPhoneActivity"/>
         <activity android:name=".intents.MgrSmsActivity"/>

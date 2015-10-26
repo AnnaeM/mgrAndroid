@@ -8,7 +8,7 @@ import com.example.mgrAndroid.db.MgrDatabaseActivity;
 import com.example.mgrAndroid.intents.MgrGpsActivity;
 import com.example.mgrAndroid.intents.MgrPhoneActivity;
 import com.example.mgrAndroid.intents.MgrSmsActivity;
-import com.example.mgrAndroid.rotation.MgrRotationActivity;
+import com.example.mgrAndroid.rotation.MgrLifecycleActivity;
 
 public class MgrStartActivity extends Activity {
     /**
@@ -20,7 +20,7 @@ public class MgrStartActivity extends Activity {
         setContentView(R.layout.main);
         setTitle(R.string.MAIN_TITLE);
 
-        setOnClickListener(R.id.rotation, MgrRotationActivity.class);
+        setOnClickListener(R.id.rotation, MgrLifecycleActivity.class);
         setOnClickListener(R.id.phone, MgrPhoneActivity.class);
         setOnClickListener(R.id.sms, MgrSmsActivity.class);
         setOnClickListener(R.id.database, MgrDatabaseActivity.class);

@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -79,7 +78,6 @@ public class MgrDatabaseActivity extends Activity {
             SQLiteDatabase sqLiteDatabase = databaseHelper.openOrCreateDatabase(name);
             adapter.addItem(name);
             adapter.notifyDataSetChanged();
-            Log.e("aaa", sqLiteDatabase.getPath());
             String message = getResources().getString(R.string.DB_CREATED) +" "+ sqLiteDatabase.getPath();
             makeToast(message);
         }

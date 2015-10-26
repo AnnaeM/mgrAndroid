@@ -20,6 +20,9 @@ import java.util.Locale;
 public class MgrGpsActivity extends Activity
 {
     private TextView coordinate;
+    private LocationManager manager;
+    private LocationListener locationListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -51,15 +54,25 @@ public class MgrGpsActivity extends Activity
             findViewById(R.id.gps_container).setVisibility(View.VISIBLE);
             LocationManager locationManager = (LocationManager)
                     getSystemService(Context.LOCATION_SERVICE);
-            LocationListener locationListener = new MgrGspLocationListener();
+            locationListener = new MgrGspLocationListener();
             locationManager.requestLocationUpdates(
-                    LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
+                    LocationManager.GPS_PROVIDER, 5000, 100, locationListener);
+
+            //set last know location
+            Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if(lastKnownLocation != null) {
+                String longitude = "Longitude: " + lastKnownLocation.getLongitude();
+                String latitude = "Latitude: " + lastKnownLocation.getLatitude();
+                String s = longitude + "\n" + latitude;
+                coordinate.setText(s);
+            }
+
 
         }
     }
 
     private boolean isGpsOn() {
-        LocationManager manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
+        manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
         return manager.isProviderEnabled( LocationManager.GPS_PROVIDER );
     }
 
@@ -75,23 +88,7 @@ public class MgrGpsActivity extends Activity
 
             String longitude = "Longitude: " + loc.getLongitude();
             String latitude = "Latitude: " + loc.getLatitude();
-
-        /*------- To get city name from coordinates -------- */
-            String cityName = null;
-            Geocoder gcd = new Geocoder(getBaseContext(), Locale.getDefault());
-            List<Address> addresses;
-            try {
-                addresses = gcd.getFromLocation(loc.getLatitude(),
-                        loc.getLongitude(), 1);
-                if (addresses.size() > 0)
-                    System.out.println(addresses.get(0).getLocality());
-                cityName = addresses.get(0).getLocality();
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-            String s = longitude + "\n" + latitude + "\n\nMy Current City is: "
-                    + cityName;
+            String s = longitude + "\n" + latitude;
             coordinate.setText(s);
         }
 
@@ -107,5 +104,9 @@ public class MgrGpsActivity extends Activity
         }
     }
 
-
+    @Override
+    protected void onDestroy() {
+        manager.removeUpdates(locationListener);
+        super.onDestroy();
+    }
 }
